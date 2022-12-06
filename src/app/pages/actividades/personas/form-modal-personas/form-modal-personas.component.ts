@@ -82,7 +82,8 @@ export class FormModalPersonasComponent implements OnInit {
       if (response.success){
         this.activeModal.close({
           success:true,
-          message: response.message});
+          message: response.message
+        });
       }
     });
   }

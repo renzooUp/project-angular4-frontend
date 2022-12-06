@@ -26,6 +26,8 @@ import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import {MatSelectModule} from "@angular/material/select";
 import {MatRadioModule} from '@angular/material/radio';
+import { MeditacionComponent } from './meditacion/meditacion.component';
+import { FormModalMeditacionComponent } from './meditacion/form-modal-meditacion/form-modal-meditacion.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import {MatRadioModule} from '@angular/material/radio';
     FormModalTipoPersonasComponent,
     FormModalComponent,
     FormModalPersonasComponent,
+    MeditacionComponent,
+    FormModalMeditacionComponent,
   ],
   imports: [
     CommonModule,
