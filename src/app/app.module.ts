@@ -16,6 +16,7 @@ import {MatCardModule} from "@angular/material/card";
 import {MatSelectModule} from "@angular/material/select";
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HeaderComponent } from '@coreui/angular';
 
 /*POSIBLEMENTE LOS ERROS DEL DISEÑO ES IMPORTAAAAR ACA IMPORTAR IMPORTANTE*/
 

@@ -9,6 +9,7 @@ import {MatListModule} from "@angular/material/list";
 import {MatCardModule} from "@angular/material/card";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import { SidebarComponent } from './main-page/sidebar/sidebar.component';
+import {MatExpansionModule} from "@angular/material/expansion";
 
 /*En este modulo ira todo el diseño de esta página*/
 @NgModule({
@@ -22,14 +23,15 @@ import { SidebarComponent } from './main-page/sidebar/sidebar.component';
     HeaderComponent,
     FooterComponent
   ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    MatIconModule,
-    MatListModule,
-    MatCardModule,
-    MatSidenavModule
-    /*aca tambien importamos*/
-  ]
+    imports: [
+        CommonModule,
+        RouterModule,
+        MatIconModule,
+        MatListModule,
+        MatCardModule,
+        MatSidenavModule,
+        MatExpansionModule,
+        /*aca tambien importamos*/
+    ]
 })
 export class CoreModule { }
