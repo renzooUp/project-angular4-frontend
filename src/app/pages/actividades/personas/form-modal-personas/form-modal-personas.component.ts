@@ -15,9 +15,9 @@ export class FormModalPersonasComponent implements OnInit {
   @Input() title: any;
   @Input() persId: any;
   @Input() item: any;
+  frmPersona: FormGroup;
   tipoPersonas: any = [];
   carreras: any = [];
-  frmPersona: FormGroup;
   constructor(public activeModal: NgbActiveModal,
               private formBuilder: FormBuilder,
               private personaService: PersonaService,
@@ -78,7 +78,9 @@ export class FormModalPersonasComponent implements OnInit {
     let data = Object.assign(this.frmPersona.value,
       {tipoPersona: {tipeId: this.frmPersona.value.tipeId}},
       {carrera: {carrId: this.frmPersona.value.carrId}});
+    console.log(data);
     this.personaService.update$(this.persId, data).subscribe(response => {
+      console.log(response.success, 'hola soy update');
       if (response.success){
         this.activeModal.close({
           success:true,
@@ -92,7 +94,7 @@ export class FormModalPersonasComponent implements OnInit {
     let data = Object.assign(this.item,
       {tipeId: this.item.tipoPersona.tipeId},
       {carrId: this.item.carrera.carrId});
+    console.log(data, "hola, soy updateData");
     this.frmPersona.patchValue(data);
   }
-
 }

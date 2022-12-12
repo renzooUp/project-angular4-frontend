@@ -29,8 +29,7 @@
 </div>
 
 <div class="modal-footer">
-  <button type="button" [disabled]="frmPrograma.invalid" *ngIf="title =='Nuevo'" class="btn btn-primary" (click)="save()">Guardar</button>
-  <button type="button" [disabled]="frmPrograma.invalid" *ngIf="title =='Modificar'" class="btn btn-primary" (click)="update()">Modificar</button>
+  <button type="button" style="background-color: #0F3971;" [disabled]="frmPrograma.invalid" *ngIf="title =='Nuevo'" class="btn btn-primary" (click)="save()">Guardar</button>
+  <button type="button" style="background-color: #0F3971;" [disabled]="frmPrograma.invalid" *ngIf="title =='Modificar'" class="btn btn-primary" (click)="update()">Modificar</button>
   <button type="button" class="btn btn-outline-secondary" (click)="activeModal.dismiss()">Cancelar</button>
 </div>
-<pre>{{frmPrograma.value | json}}</pre>

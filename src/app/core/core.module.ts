@@ -10,6 +10,7 @@ import {MatCardModule} from "@angular/material/card";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import { SidebarComponent } from './main-page/sidebar/sidebar.component';
 import {MatExpansionModule} from "@angular/material/expansion";
+import {MatButtonModule} from "@angular/material/button";
 
 /*En este modulo ira todo el diseño de esta página*/
 @NgModule({
@@ -31,6 +32,7 @@ import {MatExpansionModule} from "@angular/material/expansion";
         MatCardModule,
         MatSidenavModule,
         MatExpansionModule,
+        MatButtonModule,
         /*aca tambien importamos*/
     ]
 })

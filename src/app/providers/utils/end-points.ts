@@ -8,6 +8,8 @@ export const END_POINTS = {/*es para configurar las rutas*/
       taller: 'taller',
       tipoPersona: 'tipo-persona',
       carrera: 'carrera',
-      meditacion: 'meditacion'
+      meditacion: 'meditacion',
+      personaTaller: 'persona-taller',
+      encuesta: 'encuesta'
     }
 };

@@ -1,4 +1,4 @@
-<button type="button" (click)="openModal()" class="float-right btn btn-primary mb-2">Nuevo</button>
+<button type="button" style="background-color: #0F3971;" (click)="openModal()" class="float-right btn btn-primary mb-2">Nuevo</button>
 <div class="table-responsive">
   <table class="table table-bordered table-striped">
     <thead>
@@ -7,9 +7,8 @@
       <th>Programa</th>
       <th>Taller</th>
       <th>Fecha</th>
-      <th>Dirección</th>
       <th>Lugar</th>
-      <th colspan="2" class="text-center">Opciones</th>
+      <th colspan="3" class="text-center">Opciones</th>
     </tr>
     </thead>
     <tbody>
@@ -18,10 +17,12 @@
       <td>{{taller.programa.progNombre}}</td>
       <td>{{taller.tallTema}}</td>
       <td>{{taller.tallFecha | date:'dd/MM/YYYY'}}</td>
-      <td>{{taller.tallDireccion}}</td>
       <td>{{taller.tallLugar}}</td>
       <td class="text-center">
         <button type="button" (click)="openModalEdit(taller)" class="btn btn-warning">Editar</button>
+      </td>
+      <td class="text-center">
+        <button type="button" style="background-color: #6100FF;" (click)="openModalGestionar(taller)" class="btn btn-danger">Gestionar</button>
       </td>
       <td class="text-center">
         <button type="button" (click)="onDelete(taller)" class="btn btn-danger">Eliminar</button>

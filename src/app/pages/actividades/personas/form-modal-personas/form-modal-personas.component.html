@@ -82,7 +82,7 @@
 <pre>{{frmPersona.value | json}}</pre>
 
 <div class="modal-footer">
-  <button type="button" [disabled]="frmPersona.invalid" *ngIf="title =='Nuevo'" class="btn btn-primary" (click)="save()">Guardar</button>
-  <button type="button" [disabled]="frmPersona.invalid" *ngIf="title =='Modificar'" class="btn btn-primary" (click)="update()">Modificar</button>
+  <button type="button" style="background-color: #0F3971;" [disabled]="frmPersona.invalid" *ngIf="title =='Nuevo'" class="btn btn-primary" (click)="save()">Guardar</button>
+  <button type="button" style="background-color: #0F3971;" [disabled]="frmPersona.invalid" *ngIf="title =='Modificar'" class="btn btn-primary" (click)="update()">Modificar</button>
   <button type="button" class="btn btn-outline-secondary" (click)="activeModal.dismiss()">Cancelar</button>
 </div>

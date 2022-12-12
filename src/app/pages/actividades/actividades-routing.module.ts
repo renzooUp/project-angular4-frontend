@@ -8,6 +8,7 @@ import { PersonasComponent } from "./personas/personas.component";
 import {TipoPersonaComponent} from "./tipo-persona/tipo-persona.component";
 import {CarrerasComponent} from "./carreras/carreras.component";
 import {MeditacionComponent} from "./meditacion/meditacion.component";
+import {EncuestasComponent} from "./encuestas/encuestas.component";
 
 /*Es un modulo, es como un archivo javascript*/
 const routes: Routes = [
@@ -42,6 +43,10 @@ const routes: Routes = [
       {
         path: 'meditaciones',
         component: MeditacionComponent
+      },
+      {
+        path: 'encuestas',
+        component: EncuestasComponent
       }
     ],
   },

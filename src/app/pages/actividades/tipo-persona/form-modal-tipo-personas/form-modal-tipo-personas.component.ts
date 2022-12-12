@@ -43,6 +43,8 @@ export class FormModalTipoPersonasComponent implements OnInit {
   }
 
   update(): void {
+    console.log(this.tipeId);
+    console.log(this.frmTipoPersona.value);
     this.tipoPersonaService.update$(this.tipeId, this.frmTipoPersona.value).subscribe(response => {
       if (response.success){
         this.activeModal.close({

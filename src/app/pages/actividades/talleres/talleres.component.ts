@@ -3,6 +3,7 @@ import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {TallerService} from "../../../providers/service/taller.service";
 import Swal from "sweetalert2";
 import {FormModalTalleresComponent} from "./form-modal-talleres/form-modal-talleres.component";
+import {ManageModalTalleresComponent} from "./manage-modal-talleres/manage-modal-talleres.component";
 
 @Component({
   selector: 'app-talleres',
@@ -59,6 +60,31 @@ export class TalleresComponent implements OnInit {
     modal.componentInstance.tallId = item.tallId;
     modal.componentInstance.item = item;
     modal.componentInstance.title = 'Modificar';
+    modal.result.then(res => {
+      if (res.success) {
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Taller',
+          text: `${res.message}`,
+          showConfirmButton: false,
+          timer: 1300
+        });
+        this.getTalleres();
+      }
+    }).catch(res => {
+    });
+  }
+
+  openModalGestionar(item: any): any {
+    const modal = this.modalService.open(ManageModalTalleresComponent, {
+      size: 'lg',
+      keyboard: false,
+      backdrop: 'static'
+    });
+    modal.componentInstance.tallId = item.tallId;
+    modal.componentInstance.item = item;
+    modal.componentInstance.title = 'Gestionar';
     modal.result.then(res => {
       if (res.success) {
         Swal.fire({

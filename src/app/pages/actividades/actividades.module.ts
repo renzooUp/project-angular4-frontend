@@ -28,6 +28,9 @@ import {MatSelectModule} from "@angular/material/select";
 import {MatRadioModule} from '@angular/material/radio';
 import { MeditacionComponent } from './meditacion/meditacion.component';
 import { FormModalMeditacionComponent } from './meditacion/form-modal-meditacion/form-modal-meditacion.component';
+import { ManageModalTalleresComponent } from './talleres/manage-modal-talleres/manage-modal-talleres.component';
+import { EncuestasComponent } from './encuestas/encuestas.component';
+import { FormModalEncuestasComponent } from './encuestas/form-modal-encuestas/form-modal-encuestas.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +49,9 @@ import { FormModalMeditacionComponent } from './meditacion/form-modal-meditacion
     FormModalPersonasComponent,
     MeditacionComponent,
     FormModalMeditacionComponent,
+    ManageModalTalleresComponent,
+    EncuestasComponent,
+    FormModalEncuestasComponent,
   ],
   imports: [
     CommonModule,
