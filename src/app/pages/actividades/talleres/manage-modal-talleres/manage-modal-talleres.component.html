@@ -51,7 +51,7 @@
       </tr>
       </thead>
       <tbody *ngFor="let personaTaller of personasTaller; index as i" >
-      <tr *ngIf="personaTaller.taller.tallId == tallId && personaTaller.persona.tipoPersona.tipeNombre == 'Estudiante' || personaTaller.persona.tipoPersona.tipeNombre == 'Docente'">
+      <tr *ngIf="personaTaller.taller.tallId == tallId && personaTaller.persona.tipoPersona.tipeNombre == 'Estudiante'">
         <td>{{i+1}}</td>
         <td>{{personaTaller.persona.persNombres}}</td>
         <td>{{personaTaller.persona.persApPaterno}} {{personaTaller.persona.persApMaterno}}</td>

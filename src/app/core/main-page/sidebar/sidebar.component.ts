@@ -28,6 +28,5 @@ export class SidebarComponent implements OnInit {
     this.autorizado = false;
     this.auth = [];
     this.router.navigate(['/']);//ruta para salir
-    console.log(this.autorizado);
   }
 }
