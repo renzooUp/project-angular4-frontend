@@ -33,7 +33,7 @@ export class CarrerasComponent implements OnInit {
       keyboard: false,
       backdrop: 'static'
     });
-    modal.componentInstance.title = 'Nuevo';
+    modal.componentInstance.title = 'Nueva';
     modal.result.then(res => {
       if(res.success) {
         Swal.fire({

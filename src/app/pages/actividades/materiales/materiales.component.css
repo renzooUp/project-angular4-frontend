@@ -6,3 +6,17 @@ table{
   width: 300px;
   word-wrap: break-word;
 }
+
+.th-id, .td-id {
+  width: 50px;
+  word-wrap: break-word;
+}
+
+.th-opcion{
+  width: 120px;
+  word-wrap: break-word;
+}
+.th-tima{
+  width: 130px;
+  word-wrap: break-word;
+}

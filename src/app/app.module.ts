@@ -16,8 +16,6 @@ import {MatCardModule} from "@angular/material/card";
 import {MatSelectModule} from "@angular/material/select";
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { CarouselConfigComponent } from './pages/home/carousel-config/carousel-config.component';
-import { ViewMeditacionComponent } from './pages/home/view-meditacion/view-meditacion.component';
 import {MatButtonModule} from "@angular/material/button";
 import { ModalTalleresComponent } from './pages/dashboard/modal-talleres/modal-talleres.component';
 import { ModalEstudiantesTalleresComponent } from './pages/dashboard/modal-estudiantes-talleres/modal-estudiantes-talleres.component';
@@ -30,7 +28,6 @@ import { ModalEncuestasTalleresComponent } from './pages/dashboard/modal-encuest
     AppComponent,
     DashboardComponent,
     HomeComponent,
-    ViewMeditacionComponent,
     ModalTalleresComponent,
     ModalEstudiantesTalleresComponent,
     ModalEncuestasTalleresComponent,
@@ -50,7 +47,6 @@ import { ModalEncuestasTalleresComponent } from './pages/dashboard/modal-encuest
         MatSelectModule,
         MatSidenavModule,
         FontAwesomeModule,
-        CarouselConfigComponent,
         MatButtonModule
     ],
   providers: [],

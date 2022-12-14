@@ -15,10 +15,14 @@
         <td>{{programa.progNombre}}</td>
         <td>{{programa.progDescripcion}}</td>
         <td class="text-center">
-          <button type="button" class="btn btn-warning" (click)="openModalEdit(programa)">Editar</button>
+          <button (click)="openModalEdit(programa)" title='Editar'  class="text-center" style="color: #0F3971;" mat-list-item>
+            <mat-icon>create</mat-icon>
+          </button>
         </td>
         <td class="text-center">
-          <button type="button" class="btn btn-danger" (click)="onDelete(programa)">Eliminar</button>
+          <button (click)="onDelete(programa)" title='Eliminar' class="text-center" style="color: #ff0e0e;" mat-list-item>
+            <mat-icon>delete_forever</mat-icon>
+          </button>
         </td>
       </tr>
     </tbody>

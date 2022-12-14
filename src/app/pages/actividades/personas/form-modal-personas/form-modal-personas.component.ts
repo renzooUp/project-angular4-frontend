@@ -80,7 +80,6 @@ export class FormModalPersonasComponent implements OnInit {
       {carrera: {carrId: this.frmPersona.value.carrId}});
     console.log(data);
     this.personaService.update$(this.persId, data).subscribe(response => {
-      console.log(response.success, 'hola soy update');
       if (response.success){
         this.activeModal.close({
           success:true,
@@ -94,7 +93,6 @@ export class FormModalPersonasComponent implements OnInit {
     let data = Object.assign(this.item,
       {tipeId: this.item.tipoPersona.tipeId},
       {carrId: this.item.carrera.carrId});
-    console.log(data, "hola, soy updateData");
     this.frmPersona.patchValue(data);
   }
 }

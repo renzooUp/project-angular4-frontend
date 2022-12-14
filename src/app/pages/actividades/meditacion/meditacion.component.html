@@ -18,10 +18,14 @@
       <td>{{meditacion.mediReflexion}}</td>
       <td>{{meditacion.mediOracion}}</td>
       <td class="text-center">
-        <button type="button" class="btn btn-warning" (click)="openModalEdit(meditacion)">Editar</button>
+        <button (click)="openModalEdit(meditacion)" title='Editar' class="text-center" style="color: #0F3971;" mat-list-item>
+          <mat-icon>create</mat-icon>
+        </button>
       </td>
       <td class="text-center">
-        <button type="button" class="btn btn-danger" (click)="onDelete(meditacion)">Eliminar</button>
+        <button (click)="onDelete(meditacion)" title='Eliminar' class="text-center" style="color: #ff0e0e;" mat-list-item>
+          <mat-icon>delete_forever</mat-icon>
+        </button>
       </td>
     </tr>
     </tbody>

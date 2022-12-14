@@ -5,14 +5,32 @@
     </button>
 
     <button mat-list-item routerLink = "/admin/actividades/programas">
-      <mat-icon>add_circle</mat-icon>Programas
+      <mat-icon>folder_shared</mat-icon>Programas
     </button>
     <button mat-list-item routerLink = "/admin/actividades/talleres">
       <mat-icon>library_add</mat-icon>Talleres
     </button>
-    <button mat-list-item routerLink = "/admin/actividades/materiales">
-      <mat-icon>library_books</mat-icon>Materiales
-    </button>
+
+    <!-- MENU DESPLEGABLE-->
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <mat-icon mat-list-icon>list</mat-icon>Gestiones de taller
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <button mat-list-item routerLink = "/admin/actividades/materiales">
+          <mat-icon>library_books</mat-icon>Materiales
+        </button>
+        <button mat-list-item routerLink = "/admin/actividades/asistencia">
+          <mat-icon>how_to_reg</mat-icon>Marcar Asistencia
+        </button>
+
+        <button mat-list-item routerLink = "/admin/actividades/encuestas">
+          <mat-icon>assignment</mat-icon>Generar encuesta
+        </button>
+      </mat-expansion-panel>
+    </mat-accordion>
 
     <button mat-list-item routerLink = "/admin/actividades/personas">
       <mat-icon>face</mat-icon>Personas
@@ -23,10 +41,6 @@
     <button mat-list-item routerLink = "/admin/actividades/meditaciones">
       <mat-icon>file_copy</mat-icon>Meditación
     </button>
-    <button mat-list-item routerLink = "/admin/actividades/encuestas">
-      <mat-icon>assignment</mat-icon>Generar encuesta
-    </button>
-
     <button mat-list-item routerLink = "/">
       <mat-icon mat-list-icon>logout</mat-icon>Salir
     </button>

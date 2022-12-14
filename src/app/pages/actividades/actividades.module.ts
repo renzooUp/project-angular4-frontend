@@ -15,11 +15,8 @@ import {MaterialService} from "../../providers/service/material.service";
 import {MaterialesComponent} from "./materiales/materiales.component";
 import { FormModalTalleresComponent } from './talleres/form-modal-talleres/form-modal-talleres.component';
 import { FormModalMaterialesComponent } from './materiales/form-modal-materiales/form-modal-materiales.component';
-import { TipoPersonaComponent } from './tipo-persona/tipo-persona.component';
 import { CarrerasComponent } from './carreras/carreras.component';
 import { FormModalCarrerasComponent } from './carreras/form-modal-carreras/form-modal-carreras.component';
-import { FormModalTipoPersonasComponent } from './tipo-persona/form-modal-tipo-personas/form-modal-tipo-personas.component';
-import {TipoPersonaService} from "../../providers/service/tipo-persona.service";
 import {CarreraService} from "../../providers/service/carrera.service";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
@@ -31,6 +28,10 @@ import { FormModalMeditacionComponent } from './meditacion/form-modal-meditacion
 import { ManageModalTalleresComponent } from './talleres/manage-modal-talleres/manage-modal-talleres.component';
 import { EncuestasComponent } from './encuestas/encuestas.component';
 import { FormModalEncuestasComponent } from './encuestas/form-modal-encuestas/form-modal-encuestas.component';
+import {MatIconModule} from "@angular/material/icon";
+import {MatListModule} from "@angular/material/list";
+import { TipoPersonaService } from 'src/app/providers/service/tipo-persona.service';
+import { AsistenciasComponent } from './asistencias/asistencias.component';
 
 @NgModule({
   declarations: [
@@ -39,12 +40,10 @@ import { FormModalEncuestasComponent } from './encuestas/form-modal-encuestas/fo
     ActividadesComponent,
     PersonasComponent,
     MaterialesComponent,
-    TipoPersonaComponent,
     CarrerasComponent,
     FormModalTalleresComponent,
     FormModalMaterialesComponent,
     FormModalCarrerasComponent,
-    FormModalTipoPersonasComponent,
     FormModalComponent,
     FormModalPersonasComponent,
     MeditacionComponent,
@@ -52,6 +51,7 @@ import { FormModalEncuestasComponent } from './encuestas/form-modal-encuestas/fo
     ManageModalTalleresComponent,
     EncuestasComponent,
     FormModalEncuestasComponent,
+    AsistenciasComponent,
   ],
   imports: [
     CommonModule,
@@ -62,7 +62,9 @@ import { FormModalEncuestasComponent } from './encuestas/form-modal-encuestas/fo
     MatInputModule,
     MatButtonModule,
     MatSelectModule,
-    MatRadioModule
+    MatRadioModule,
+    MatIconModule,
+    MatListModule
   ],
     providers: [/*Aca van todos los servicios*/
       CarreraService,

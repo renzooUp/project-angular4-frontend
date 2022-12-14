@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {EncuestaService} from "../../../providers/service/encuesta.service";
-import {FormModalComponent} from "../programas/form-modal/form-modal.component";
 import Swal from "sweetalert2";
 import {FormModalEncuestasComponent} from "./form-modal-encuestas/form-modal-encuestas.component";
 
@@ -35,7 +34,7 @@ export class EncuestasComponent implements OnInit {
       keyboard: false,
       backdrop: 'static'
     });
-    modal.componentInstance.title = 'Nuevo';
+    modal.componentInstance.title = 'Nueva';
     modal.result.then(res => {
       if(res.success) {
         Swal.fire({

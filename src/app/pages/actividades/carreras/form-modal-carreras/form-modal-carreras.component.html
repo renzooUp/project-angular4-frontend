@@ -1,5 +1,5 @@
 <div class="modal-header">
-  <h4 class="modal-title">{{title}} Carrera</h4>
+  <h1 class="modal-title">{{title}} Carrera</h1>
   <button type="button" class="close" aria-label="Close button" aria-describedby="modal-title" (click)="activeModal.dismiss()">
     <span aria-hidden="true">x</span>
   </button>
@@ -37,7 +37,7 @@
 </div>
 
 <div class="modal-footer">
-  <button type="button" style="background-color: #0F3971;" [disabled]="frmCarrera.invalid" *ngIf="title =='Nuevo'" class="btn btn-primary" (click)="save()">Guardar</button>
+  <button type="button" style="background-color: #0F3971;" [disabled]="frmCarrera.invalid" *ngIf="title =='Nueva'" class="btn btn-primary" (click)="save()">Guardar</button>
   <button type="button" style="background-color: #0F3971;" [disabled]="frmCarrera.invalid" *ngIf="title =='Modificar'" class="btn btn-primary" (click)="update()">Modificar</button>
   <button type="button" class="btn btn-outline-secondary" (click)="activeModal.dismiss()">Cancelar</button>
 </div>

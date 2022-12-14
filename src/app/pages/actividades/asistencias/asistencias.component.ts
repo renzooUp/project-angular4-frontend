@@ -1,42 +1,40 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {NgbActiveModal} from "@ng-bootstrap/ng-bootstrap";
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import { PersonaTallerService } from 'src/app/providers/service/persona-taller.service';
+import {TallerService} from "../../../providers/service/taller.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {PersonaTallerService} from "../../../../providers/service/persona-taller.service";
-import {TallerService} from "../../../../providers/service/taller.service";
-import {PersonaService} from "../../../../providers/service/persona.service";
+import { PersonaService } from 'src/app/providers/service/persona.service';
 import Swal from "sweetalert2";
 
 @Component({
-  selector: 'app-manage-modal-talleres',
-  templateUrl: './manage-modal-talleres.component.html',
-  styleUrls: ['./manage-modal-talleres.component.css']
+  selector: 'app-asistencias',
+  templateUrl: './asistencias.component.html',
+  styleUrls: ['./asistencias.component.css']
 })
-export class ManageModalTalleresComponent implements OnInit {
+export class AsistenciasComponent implements OnInit {
 
-  @Input() item: any;
-  @Input() title: any;
-  @Input() tallId: any;
   frmPersonaTaller: FormGroup;
-  talleres: any = [];
   personasTaller: any = [];
+  talleres: any = [];
   personas: any = [];
-  constructor(public activeModal: NgbActiveModal,
+  constructor(private modalService: NgbModal,
               private formBuilder: FormBuilder,
               private personaTallerService: PersonaTallerService,
-              private personaService: PersonaService,
-              private tallerService: TallerService) { }
+              private tallerService: TallerService,
+              private personaService: PersonaService) { }
 
   ngOnInit(): void {
     this.formInit();
     this.getPersonaTaller();
     this.getTalleres();
     this.getPersonas();
+    this.onTabla();
   }
 
-  getTalleres(): void{
-    this.tallerService.getAll$().subscribe(response => {
-      this.talleres = response.data || []; /*|| es OR*/
-      console.log(this.talleres);
+  getPersonaTaller(): void{
+    this.personaTallerService.getAll$().subscribe(response => {
+      this.personasTaller = response.data || []; /*|| es OR*/
+      console.log(this.personasTaller);
     });
   }
 
@@ -47,10 +45,10 @@ export class ManageModalTalleresComponent implements OnInit {
     });
   }
 
-  getPersonaTaller(): void{
-    this.personaTallerService.getAll$().subscribe(response => {
-      this.personasTaller = response.data || []; /*|| es OR*/
-      console.log(this.personasTaller);
+  getTalleres(): void{
+    this.tallerService.getAll$().subscribe(response => {
+      this.talleres = response.data || []; /*|| es OR*/
+      console.log(this.talleres);
     });
   }
 
@@ -62,60 +60,47 @@ export class ManageModalTalleresComponent implements OnInit {
     this.frmPersonaTaller = this.formBuilder.group(controls);
   }
 
-  assign(): void {
-    let data = Object.assign(this.frmPersonaTaller.value,
-      {persona: {persId: this.frmPersonaTaller.value.persona}},
-      {taller: {tallId: this.frmPersonaTaller.value.taller}});
-    this.personaTallerService.add$(data).subscribe(response =>{
-      if (response.success) {
-        this.getPersonaTaller();
-        this.getTalleres();
-        this.getPersonas();
-      }
-    });//serializa y envia formato tipo JS
-  }
-
   public onAsistio(item: any): void {
     const IdAsistio = item.petaId;
     const persIdAsistio = item.persona.persId;
     const tallIdAsistio = item.taller.tallId
     const mensaje = '¿ Estas seguro que asistio ?';
-      Swal.fire({
-        title: 'Confirmación de la asistencia',
-        text: `${mensaje}`,
-        backdrop: true,
-        //animation: true,
-        showCloseButton: true,
-        showCancelButton: true,
-        showConfirmButton: true,
-        confirmButtonColor: '#0F3971',
-        confirmButtonText: 'Si!',
-        cancelButtonText: 'Cancelar'
-      }).then((result) => {
-        if (result.value) {
-          let data = Object.assign(
-            {taller: {tallId: tallIdAsistio}},
-            {persona: {persId: persIdAsistio}},
-            {petaAsistencia: 'A'});
-          // @ts-ignore
-          this.personaTallerService.update$(IdAsistio, data).subscribe(response => {
-            if (response.success) {
-              Swal.fire({
-                title: 'Asistencia guardada',
-                text: response.message,
-                backdrop: true,
-                //animation: true,
-                showConfirmButton: false,
-                confirmButtonColor: '#0F3971',
-                timer: 1500,
-              });
-              this.getPersonaTaller();
-              this.getTalleres();
-              this.getPersonas();
-            }
-          });
-        }
-      });
+    Swal.fire({
+      title: 'Confirmación de la asistencia',
+      text: `${mensaje}`,
+      backdrop: true,
+      //animation: true,
+      showCloseButton: true,
+      showCancelButton: true,
+      showConfirmButton: true,
+      confirmButtonColor: '#0F3971',
+      confirmButtonText: 'Si!',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.value) {
+        let data = Object.assign(
+          {taller: {tallId: tallIdAsistio}},
+          {persona: {persId: persIdAsistio}},
+          {petaAsistencia: 'A'});
+        // @ts-ignore
+        this.personaTallerService.update$(IdAsistio, data).subscribe(response => {
+          if (response.success) {
+            Swal.fire({
+              title: 'Asistencia guardada',
+              text: response.message,
+              backdrop: true,
+              //animation: true,
+              showConfirmButton: false,
+              confirmButtonColor: '#0F3971',
+              timer: 1500,
+            });
+            this.getPersonaTaller();
+            this.getTalleres();
+            this.getPersonas();
+          }
+        });
+      }
+    });
   }
 
   public onFalto(item: any): void {
@@ -162,6 +147,29 @@ export class ManageModalTalleresComponent implements OnInit {
     });
   }
 
+  assign(): void {
+    let data = Object.assign(this.frmPersonaTaller.value,
+      {persona: {persId: this.frmPersonaTaller.value.persona}},
+      {taller: {tallId: this.frmPersonaTaller.value.taller}});
+    this.personaTallerService.add$(data).subscribe(response =>{
+      if (response.success) {
+        Swal.fire({
+          title: 'Agregado correctamente',
+          text: response.message,
+          backdrop: true,
+          //animation: true,
+          showConfirmButton: false,
+          confirmButtonColor: '#0F3971',
+          timer: 1500,
+        });
+        this.getPersonaTaller();
+        this.getTalleres();
+        this.getPersonas();
+
+      }
+    });//serializa y envia formato tipo JS
+  }
+
   public onDelete(item: any): void {
     const ID = item.petaId;
     const mensaje = '¿ Esta seguro que desea eliminar ?';
@@ -199,4 +207,10 @@ export class ManageModalTalleresComponent implements OnInit {
       });
     }
   }
+
+  public onTabla(): void {
+    return this.frmPersonaTaller.value.taller;
+
+  }
+
 }

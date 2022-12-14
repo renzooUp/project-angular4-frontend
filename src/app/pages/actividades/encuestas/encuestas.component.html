@@ -3,26 +3,30 @@
   <table class="table table-bordered table-striped">
     <thead>
     <tr>
-      <th>ID</th>
-      <th>Taller</th>
-      <th>Respuesta 1</th>
-      <th>Respuesta 2</th>
-      <th>Respuesta 3</th>
+      <th class="th-id">ID</th>
+      <th class="th-taller">Taller</th>
+      <th class="th-1">Respuesta 1</th>
+      <th class="th-2">Respuesta 2</th>
+      <th class="th-3">Respuesta 3</th>
       <th colspan="2" class="text-center">Opciones</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let encuesta of encuestas; index as i">
-      <td>{{i+1}}</td>
-      <td>{{encuesta.taller.tallTema}}</td>
-      <td>{{encuesta.encuRespuestaUno}}</td>
-      <td>{{encuesta.encuRespuestaDos}}</td>
-      <td>{{encuesta.encuRespuestaTres}}</td>
+      <td class="td-id">{{i+1}}</td>
+      <td class="td-taller">{{encuesta.taller.tallTema}}</td>
+      <td class="td-1">{{encuesta.encuRespuestaUno}}</td>
+      <td class="td-2">{{encuesta.encuRespuestaDos}}</td>
+      <td class="td-3">{{encuesta.encuRespuestaTres}}</td>
       <td class="text-center">
-        <button type="button" class="btn btn-warning" (click)="openModalEdit(encuesta)">Editar</button>
+        <button (click)="openModalEdit(encuesta)" title='Editar' class="text-center" style="color: #0F3971;" mat-list-item>
+          <mat-icon>create</mat-icon>
+        </button>
       </td>
       <td class="text-center">
-        <button type="button" class="btn btn-danger" (click)="onDelete(encuesta)">Eliminar</button>
+        <button (click)="onDelete(encuesta)" title='Eliminar' class="text-center" style="color: #ff0e0e;" mat-list-item>
+          <mat-icon>delete_forever</mat-icon>
+        </button>
       </td>
     </tr>
     </tbody>

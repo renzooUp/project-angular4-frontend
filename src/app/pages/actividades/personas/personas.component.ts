@@ -3,6 +3,7 @@ import {PersonaService} from "../../../providers/service/persona.service";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import Swal from "sweetalert2";
 import {FormModalPersonasComponent} from "./form-modal-personas/form-modal-personas.component";
+import {TipoPersonaService} from "../../../providers/service/tipo-persona.service";
 
 @Component({
   selector: 'app-personas',
@@ -12,12 +13,15 @@ import {FormModalPersonasComponent} from "./form-modal-personas/form-modal-perso
 export class PersonasComponent implements OnInit {
 
   personas: any = [];
+  tipoPersonas: any = [];
 
   constructor(private personaService: PersonaService,
-              private modalService: NgbModal) {}
+              private modalService: NgbModal,
+              private tipoPersonaService: TipoPersonaService) {}
 
   ngOnInit(): void {
     this.getPersonas();
+    this.getTipoPersonas();
   }
 
   getPersonas(): void {
@@ -27,13 +31,20 @@ export class PersonasComponent implements OnInit {
     });
   }
 
+  getTipoPersonas(): void {
+    this.tipoPersonaService.getAll$().subscribe(response => {
+      this.tipoPersonas = response.data || [];
+      console.log(this.tipoPersonas);
+    });
+  }
+
   openModal(): void {
     const modal = this.modalService.open(FormModalPersonasComponent, {
       size: 'lg',
       keyboard: false,
       backdrop: 'static'
     });
-    modal.componentInstance.title = 'Nuevo';
+    modal.componentInstance.title = 'Nueva';
     modal.result.then(res => {
       if(res.success) {
         Swal.fire({

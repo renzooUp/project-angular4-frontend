@@ -21,14 +21,14 @@
       </tr>
       </thead>
       <tbody *ngFor="let personaTaller of personasTaller; index as i" >
-      <tr *ngIf="personaTaller.taller.tallId == tallId;">
-        <td *ngIf="personaTaller.persona.carrera.carrNombre == 'Ciudadano';">{{i+1}}</td>
-        <td *ngIf="personaTaller.persona.carrera.carrNombre == 'Ciudadano';">{{personaTaller.persona.persNombres}}</td>
-        <td *ngIf="personaTaller.persona.carrera.carrNombre == 'Ciudadano';">{{personaTaller.persona.persApPaterno}} {{personaTaller.persona.persApMaterno}}</td>
-        <td *ngIf="personaTaller.persona.carrera.carrNombre == 'Ciudadano';">{{personaTaller.persona.persDni}}</td>
-        <td *ngIf="personaTaller.persona.carrera.carrNombre == 'Ciudadano';">{{personaTaller.persona.persTelefono}}</td>
-        <td *ngIf="personaTaller.persona.carrera.carrNombre == 'Ciudadano';">{{personaTaller.taller.tallTema}}</td>
-        <td *ngIf="personaTaller.persona.carrera.carrNombre == 'Ciudadano';">{{personaTaller.petaAsistencia}}</td>
+      <tr *ngIf="personaTaller.taller.tallId == tallId && personaTaller.persona.carrera.carrNombre == 'Ciudadano';">
+        <td>{{i+1}}</td>
+        <td>{{personaTaller.persona.persNombres}}</td>
+        <td>{{personaTaller.persona.persApPaterno}} {{personaTaller.persona.persApMaterno}}</td>
+        <td>{{personaTaller.persona.persDni}}</td>
+        <td>{{personaTaller.persona.persTelefono}}</td>
+        <td>{{personaTaller.taller.tallTema}}</td>
+        <td>{{personaTaller.petaAsistencia}}</td>
       </tr>
       </tbody>
     </table>

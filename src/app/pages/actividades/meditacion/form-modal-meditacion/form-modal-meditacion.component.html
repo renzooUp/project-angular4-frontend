@@ -1,5 +1,5 @@
 <div class="modal-header">
-  <h4 class="modal-title">{{title}} Programa</h4>
+  <h1 class="modal-title">{{title}} meditación</h1>
   <button type="button" class="close" aria-label="Close button" aria-describedby="modal-title" (click)="activeModal.dismiss()">
     <span aria-hidden="true">x</span>
   </button>
@@ -7,7 +7,7 @@
 <div class="modal-body">
   <form [formGroup]="frmMeditacion">
     <div class="form-group row">
-      <label class="col-sm-3 col-form-label">Ingrese la reflexión</label>
+      <label class="col-sm-3 col-form-label">Reflexión</label>
       <div class="col-sm-9">
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>Reflexión</mat-label>
@@ -17,20 +17,20 @@
     </div>
 
     <div class="form-group row">
-      <label class="col-sm-3 col-form-label">Ingrese el versiculo de la reflexión</label>
+      <label class="col-sm-3 col-form-label">Versiculo de la reflexión</label>
       <div class="col-sm-9">
         <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Versiculo</mat-label>
+          <mat-label>Ejemplo: Salmos 33:4-8</mat-label>
           <input autocomplete="off" formControlName="mediVersiculo" matInput>
         </mat-form-field>
       </div>
     </div>
 
     <div class="form-group row">
-      <label class="col-sm-3 col-form-label">Ingrese la oración</label>
+      <label class="col-sm-3 col-form-label">Oración</label>
       <div class="col-sm-9">
         <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Oración</mat-label>
+          <mat-label>Finalizar con un Amén</mat-label>
           <input autocomplete="off" formControlName="mediOracion" matInput>
         </mat-form-field>
       </div>
@@ -40,7 +40,7 @@
 </div>
 
 <div class="modal-footer">
-  <button type="button" style="background-color: #0F3971;" [disabled]="frmMeditacion.invalid" *ngIf="title =='Nuevo'" class="btn btn-primary" (click)="save()">Guardar</button>
+  <button type="button" style="background-color: #0F3971;" [disabled]="frmMeditacion.invalid" *ngIf="title =='Nueva'" class="btn btn-primary" (click)="save()">Guardar</button>
   <button type="button" style="background-color: #0F3971;" [disabled]="frmMeditacion.invalid" *ngIf="title =='Modificar'" class="btn btn-primary" (click)="update()">Modificar</button>
   <button type="button" class="btn btn-outline-secondary" (click)="activeModal.dismiss()">Cancelar</button>
 </div>

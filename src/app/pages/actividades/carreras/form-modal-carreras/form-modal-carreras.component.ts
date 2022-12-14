@@ -14,7 +14,6 @@ export class FormModalCarrerasComponent implements OnInit {
   @Input() carrId: any;
   @Input() item: any;
   frmCarrera: FormGroup;
-  selected = 'option2';
   constructor(public activeModal: NgbActiveModal,
               private formBuilder: FormBuilder,
               private carreraService: CarreraService) { }

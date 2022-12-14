@@ -1,31 +1,34 @@
 <div class="modal-header">
-  <h4 class="modal-title">{{title}} Material</h4>
+  <h1 class="modal-title">{{title}} Material</h1>
   <button type="button" class="close" aria-label="Close button" aria-describedby="modal-title" (click)="activeModal.dismiss()">
     <span aria-hidden="true">x</span>
   </button>
 </div>
 <div class="modal-body">
+
   <form [formGroup]="frmMaterial">
 
     <div class="form-group row">
-      <label class="col-sm-3 col-form-label">Ingrese el titulo del material</label>
+      <label class="col-sm-3 col-form-label">Taller</label>
+      <div class="col-sm-9">
+        <select class="form-control" formControlName="tallId">
+          <option *ngFor="let talleres of taller" [value]="talleres.tallId">
+            {{talleres.tallTema}}
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label">Titulo</label>
       <div class="col-sm-9">
         <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Titulo del material</mat-label>
+          <mat-label>Titulo</mat-label>
           <input type="text" autocomplete="off" formControlName="mateNombre" matInput>
         </mat-form-field>
       </div>
     </div>
 
-    <div class="form-group row">
-      <label class="col-sm-3 col-form-label">Ingrese el link del material a subir</label>
-      <div class="col-sm-9">
-        <mat-form-field class="example-full-width" appearance="fill">
-          <mat-label>Puede ser link de documento de google, office, youtube, ppt, etc</mat-label>
-          <input type="text" autocomplete="off" formControlName="mateDescripcion" matInput>
-        </mat-form-field>
-      </div>
-    </div>
 
     <div class="form-group row">
       <label class="col-sm-3 col-form-label">Tipo de material</label>
@@ -39,15 +42,15 @@
     </div>
 
     <div class="form-group row">
-      <label class="col-sm-3 col-form-label">Taller a asignar</label>
+      <label class="col-sm-3 col-form-label">Enlace</label>
       <div class="col-sm-9">
-        <select class="form-control" formControlName="tallId">
-          <option *ngFor="let talleres of taller" [value]="talleres.tallId">
-            {{talleres.tallTema}}
-          </option>
-        </select>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Puede ser enlace de documento de google, office, youtube, ppt, etc</mat-label>
+          <input type="text" autocomplete="off" formControlName="mateDescripcion" matInput>
+        </mat-form-field>
       </div>
     </div>
+
   </form>
 </div>
 

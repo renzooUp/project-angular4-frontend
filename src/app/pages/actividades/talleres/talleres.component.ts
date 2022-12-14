@@ -84,7 +84,7 @@ export class TalleresComponent implements OnInit {
     });
     modal.componentInstance.tallId = item.tallId;
     modal.componentInstance.item = item;
-    modal.componentInstance.title = 'Gestionar';
+    modal.componentInstance.title = 'Organizadores';
     modal.result.then(res => {
       if (res.success) {
         Swal.fire({

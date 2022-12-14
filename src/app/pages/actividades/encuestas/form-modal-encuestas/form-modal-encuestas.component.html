@@ -1,5 +1,5 @@
 <div class="modal-header">
-  <h4 class="modal-title">{{title}} Encuesta</h4>
+  <h1 class="modal-title">{{title}} Encuesta</h1>
   <button type="button" class="close" aria-label="Close button" aria-describedby="modal-title" (click)="activeModal.dismiss()">
     <span aria-hidden="true">x</span>
   </button>
@@ -8,7 +8,7 @@
   <form [formGroup]="frmEncuesta">
 
     <div class="form-group row">
-      <label class="col-sm-3 col-form-label">Taller a asignar</label>
+      <label class="col-sm-3 col-form-label">Taller</label>
       <div class="col-sm-9">
         <select class="form-control" formControlName="tallId">
           <option *ngFor="let taller of talleres" [value]="taller.tallId">
@@ -59,7 +59,7 @@
 </div>
 
 <div class="modal-footer">
-  <button type="button" style="background-color: #0F3971;" [disabled]="frmEncuesta.invalid" *ngIf="title =='Nuevo'" class="btn btn-primary" (click)="save()">Guardar</button>
+  <button type="button" style="background-color: #0F3971;" [disabled]="frmEncuesta.invalid" *ngIf="title =='Nueva'" class="btn btn-primary" (click)="save()">Guardar</button>
   <button type="button" style="background-color: #0F3971;" [disabled]="frmEncuesta.invalid" *ngIf="title =='Modificar'" class="btn btn-primary" (click)="update()">Modificar</button>
   <button type="button" class="btn btn-outline-secondary" (click)="activeModal.dismiss()">Cancelar</button>
 </div>
