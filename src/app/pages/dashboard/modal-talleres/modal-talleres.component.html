@@ -28,7 +28,14 @@
         <td>{{personaTaller.persona.persDni}}</td>
         <td>{{personaTaller.persona.persTelefono}}</td>
         <td>{{personaTaller.taller.tallTema}}</td>
-        <td>{{personaTaller.petaAsistencia}}</td>
+        <td>
+          <button class="btn" style="color: #2BDE07;" *ngIf="personaTaller.petaAsistencia =='A'">
+            <mat-icon>check</mat-icon>
+          </button>
+          <button class="btn" style="color: #ff0202;" *ngIf="personaTaller.petaAsistencia =='F'" >
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </td>
       </tr>
       </tbody>
     </table>

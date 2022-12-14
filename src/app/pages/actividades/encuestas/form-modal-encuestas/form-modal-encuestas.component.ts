@@ -33,7 +33,6 @@ export class FormModalEncuestasComponent implements OnInit {
     this.tallerService.getAll$().subscribe(response => {
       /*console.log(response);/*aca se guarda toda la info del backend*/
       this.talleres = response.data || []; /*|| es OR*/
-      console.log(this.talleres);
     });
   }
 
@@ -63,7 +62,6 @@ export class FormModalEncuestasComponent implements OnInit {
   update(): void {
     let data = Object.assign(this.frmEncuesta.value,
       {taller: {tallId: this.frmEncuesta.value.tallId}});
-    console.log(data);
     this.encuestaService.update$(this.encuId, data).subscribe(response => {
       if (response.success){
         this.activeModal.close({
@@ -77,7 +75,6 @@ export class FormModalEncuestasComponent implements OnInit {
   updateData(): void {
     let data = Object.assign(this.item,
       {tallId: this.item.taller.tallId});
-    console.log(data, "hola, soy updateData");
     this.frmEncuesta.patchValue(data);
   }
 

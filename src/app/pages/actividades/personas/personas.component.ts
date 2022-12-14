@@ -27,14 +27,12 @@ export class PersonasComponent implements OnInit {
   getPersonas(): void {
     this.personaService.getAll$().subscribe(response => {
       this.personas = response.data || [];
-      console.log(this.personas);
     });
   }
 
   getTipoPersonas(): void {
     this.tipoPersonaService.getAll$().subscribe(response => {
       this.tipoPersonas = response.data || [];
-      console.log(this.tipoPersonas);
     });
   }
 

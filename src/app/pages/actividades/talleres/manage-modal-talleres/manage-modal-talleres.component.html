@@ -44,19 +44,19 @@
         <th>ID</th>
         <th>Nombres</th>
         <th>Apellidos</th>
-        <th>Carrera</th>
-        <th>Ciclo</th>
+        <th>Carrera y ciclo</th>
+        <th>Tipo de persona</th>
         <th>Asistencia</th>
         <th class="text-center">Opcion</th>
       </tr>
       </thead>
       <tbody *ngFor="let personaTaller of personasTaller; index as i" >
-      <tr *ngIf="personaTaller.taller.tallId == tallId && personaTaller.persona.tipoPersona.tipeNombre == 'Estudiante'">
+      <tr *ngIf="personaTaller.taller.tallId == tallId && personaTaller.persona.tipoPersona.tipeNombre == 'Estudiante' || personaTaller.persona.tipoPersona.tipeNombre == 'Docente'">
         <td>{{i+1}}</td>
         <td>{{personaTaller.persona.persNombres}}</td>
         <td>{{personaTaller.persona.persApPaterno}} {{personaTaller.persona.persApMaterno}}</td>
-        <td>{{personaTaller.persona.carrera.carrNombre}}</td>
-        <td>{{personaTaller.persona.carrera.carrCiclo}}</td>
+        <td>{{personaTaller.persona.carrera.carrNombre}} {{personaTaller.persona.carrera.carrCiclo}}</td>
+        <td>{{personaTaller.persona.tipoPersona.tipeNombre}}</td>
         <td class="text-center">
           <button type="button" (click)="onAsistio(personaTaller)" class="btn" style="color: #2BDE07;" *ngIf="personaTaller.petaAsistencia =='F'">
             <mat-icon>check</mat-icon></button>

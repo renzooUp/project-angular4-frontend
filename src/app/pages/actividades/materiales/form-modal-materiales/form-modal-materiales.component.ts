@@ -32,7 +32,6 @@ export class FormModalMaterialesComponent implements OnInit {
   getTalleres(): void{
     this.tallerService.getAll$().subscribe(response => {
       this.taller = response.data || []; /*|| es OR*/
-      console.log(this.taller);
     });
   }
 

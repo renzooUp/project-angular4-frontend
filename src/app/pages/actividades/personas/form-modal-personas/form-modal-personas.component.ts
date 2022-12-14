@@ -36,14 +36,12 @@ export class FormModalPersonasComponent implements OnInit {
   getTipoPersonas(): void {
     this.tipoPersonaService.getAll$().subscribe(response => {
       this.tipoPersonas = response.data || [];
-      console.log(this.tipoPersonas);
     });
   }
 
   getCarreras(): void {
     this.carreraService.getAll$().subscribe(response => {
       this.carreras = response.data || [];
-      console.log(this.carreras);
     });
   }
 
@@ -78,7 +76,6 @@ export class FormModalPersonasComponent implements OnInit {
     let data = Object.assign(this.frmPersona.value,
       {tipoPersona: {tipeId: this.frmPersona.value.tipeId}},
       {carrera: {carrId: this.frmPersona.value.carrId}});
-    console.log(data);
     this.personaService.update$(this.persId, data).subscribe(response => {
       if (response.success){
         this.activeModal.close({

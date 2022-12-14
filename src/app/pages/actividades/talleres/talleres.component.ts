@@ -23,9 +23,7 @@ export class TalleresComponent implements OnInit {
 
   getTalleres(): void{
     this.tallerService.getAll$().subscribe(response => {
-      /*console.log(response);/*aca se guarda toda la info del backend*/
       this.talleres = response.data || []; /*|| es OR*/
-      console.log(this.talleres);
     });
   }
 

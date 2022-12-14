@@ -1,6 +1,9 @@
 export const END_POINTS = {/*es para configurar las rutas*/
     api: 'http://localhost:8080/api/',
 
+    auth: {
+      token: 'oauth/token',
+    },
     actividades: {
       material: 'material',
       persona: 'persona',

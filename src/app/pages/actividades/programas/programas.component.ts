@@ -3,6 +3,7 @@ import {ProgramaService} from "../../../providers/service/programa.service";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import { FormModalComponent } from './form-modal/form-modal.component';
 import Swal from 'sweetalert2';
+import {TallerService} from "../../../providers/service/taller.service";
 
 @Component({
   selector: 'app-programas',
@@ -12,7 +13,6 @@ import Swal from 'sweetalert2';
 export class ProgramasComponent implements OnInit {
 
   programas: any = [];
-
   constructor(private programaService: ProgramaService,
               private modalService: NgbModal) { }
 
@@ -23,7 +23,6 @@ export class ProgramasComponent implements OnInit {
   getProgramas(): void{
     this.programaService.getAll$().subscribe(response => {
       this.programas = response.data || []; /*|| es OR*/
-      console.log(this.programas);
     });
   }
 

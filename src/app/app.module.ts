@@ -20,6 +20,7 @@ import {MatButtonModule} from "@angular/material/button";
 import { ModalTalleresComponent } from './pages/dashboard/modal-talleres/modal-talleres.component';
 import { ModalEstudiantesTalleresComponent } from './pages/dashboard/modal-estudiantes-talleres/modal-estudiantes-talleres.component';
 import { ModalEncuestasTalleresComponent } from './pages/dashboard/modal-encuestas-talleres/modal-encuestas-talleres.component';
+import { LoginComponent } from './pages/login/login.component';
 
 /*POSIBLEMENTE LOS ERROS DEL DISEÑO ES IMPORTAAAAR ACA IMPORTAR IMPORTANTE*/
 
@@ -31,6 +32,7 @@ import { ModalEncuestasTalleresComponent } from './pages/dashboard/modal-encuest
     ModalTalleresComponent,
     ModalEstudiantesTalleresComponent,
     ModalEncuestasTalleresComponent,
+    LoginComponent,
   ],
     imports: [
         BrowserModule,

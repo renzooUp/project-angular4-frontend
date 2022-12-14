@@ -24,7 +24,6 @@ export class ModalEncuestasTalleresComponent implements OnInit {
   getEncuestas(): void{
     this.encuestaService.getAll$().subscribe(response => {
       this.encuestas = response.data || []; /*|| es OR*/
-      console.log(this.encuestas);
     });
   }
 }

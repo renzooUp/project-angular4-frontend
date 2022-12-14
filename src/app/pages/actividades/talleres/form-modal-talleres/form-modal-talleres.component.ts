@@ -33,7 +33,6 @@ export class FormModalTalleresComponent implements OnInit {
   getProgramas(): void{
     this.programaService.getAll$().subscribe(response => {
       this.programas = response.data || []; /*|| es OR*/
-      console.log(this.programas);
     });
   }
 
@@ -65,7 +64,6 @@ export class FormModalTalleresComponent implements OnInit {
   update(): void {
     let data = Object.assign(this.frmTaller.value,
       {programa: {progId: this.frmTaller.value.progId}});
-    console.log(data);
     this.tallerService.update$(this.tallId, data).subscribe(response => {
       if (response.success){
         this.activeModal.close({
@@ -79,7 +77,6 @@ export class FormModalTalleresComponent implements OnInit {
   updateData(): void {
     let data = Object.assign(this.item,
       {progId: this.item.programa.progId});
-    console.log(data, "hola, soy updateData");
     this.frmTaller.patchValue(data);
   }
 }

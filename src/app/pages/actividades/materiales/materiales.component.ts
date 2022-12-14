@@ -22,7 +22,6 @@ export class MaterialesComponent implements OnInit {
   getMateriales(): void {
     this.materialService.getAll$().subscribe(response => {
       this.materiales = response.data || [];
-      console.log(this.materiales);
     });
   }
 

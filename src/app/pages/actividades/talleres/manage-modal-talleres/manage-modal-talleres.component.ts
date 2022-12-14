@@ -36,21 +36,18 @@ export class ManageModalTalleresComponent implements OnInit {
   getTalleres(): void{
     this.tallerService.getAll$().subscribe(response => {
       this.talleres = response.data || []; /*|| es OR*/
-      console.log(this.talleres);
     });
   }
 
   getPersonas(): void{
     this.personaService.getAll$().subscribe(response => {
       this.personas = response.data || []; /*|| es OR*/
-      console.log(this.personas);
     });
   }
 
   getPersonaTaller(): void{
     this.personaTallerService.getAll$().subscribe(response => {
       this.personasTaller = response.data || []; /*|| es OR*/
-      console.log(this.personasTaller);
     });
   }
 

@@ -23,7 +23,6 @@ export class CarrerasComponent implements OnInit {
   getCarreras(): void{
     this.carreraService.getAll$().subscribe(response => {
       this.carreras = response.data || []; /*|| es OR*/
-      console.log(this.carreras);
     });
   }
 

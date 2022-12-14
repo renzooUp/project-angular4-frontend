@@ -23,7 +23,6 @@ export class MeditacionComponent implements OnInit {
   getMeditaciones(): void{
     this.meditacionService.getAll$().subscribe(response => {
       this.meditaciones = response.data || []; /*|| es OR*/
-      console.log(this.meditaciones);
     });
   }
 

@@ -3,6 +3,7 @@ import { MainPageComponent } from "./core/main-page/main-page.component";
 import {NgModule} from "@angular/core";
 import { DashboardComponent } from "./pages/dashboard/dashboard.component";
 import {HomeComponent} from "./pages/home/home.component";
+import {LoginComponent} from "./pages/login/login.component";
 
 /*Es un modulo, es como un archivo javascript*/
 const routes: Routes = [
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
   }
 ];
 

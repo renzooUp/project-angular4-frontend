@@ -34,21 +34,18 @@ export class AsistenciasComponent implements OnInit {
   getPersonaTaller(): void{
     this.personaTallerService.getAll$().subscribe(response => {
       this.personasTaller = response.data || []; /*|| es OR*/
-      console.log(this.personasTaller);
     });
   }
 
   getPersonas(): void{
     this.personaService.getAll$().subscribe(response => {
       this.personas = response.data || []; /*|| es OR*/
-      console.log(this.personas);
     });
   }
 
   getTalleres(): void{
     this.tallerService.getAll$().subscribe(response => {
       this.talleres = response.data || []; /*|| es OR*/
-      console.log(this.talleres);
     });
   }
 

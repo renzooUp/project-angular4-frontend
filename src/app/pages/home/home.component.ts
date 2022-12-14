@@ -24,14 +24,12 @@ export class HomeComponent implements OnInit {
     this.tallerService.getAll$().subscribe(response => {
       /*console.log(response);/*aca se guarda toda la info del backend*/
       this.talleres = response.data || []; /*|| es OR*/
-      console.log(this.talleres);
     });
   }
 
   getMeditaciones(): void{
     this.meditacionService.getAll$().subscribe(response => {
       this.meditaciones = response.data || []; /*|| es OR*/
-      console.log(this.meditaciones);
     });
   }
 }
